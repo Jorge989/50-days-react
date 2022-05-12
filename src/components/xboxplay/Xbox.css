@@ -1,0 +1,129 @@
+:root {
+  --left-bg-color: rgba(87, 84, 236, 0.7);
+  --right-bg-color: rgba(43, 43, 43, 0.7);
+  --left-btn-hover-color: rgba(87, 84, 236, 1);
+  --right-btn-hover-color: rgba(28, 122, 28, 1);
+  --hover-width: 75%;
+  --other-width: 25%;
+  --speed: 1000ms;
+}
+/* body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+} */
+.container {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #333;
+}
+.split {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.split.left {
+  left: 0;
+
+  background-image: url("https://raw.githubusercontent.com/bradtraversy/50projects50days/master/split-landing-page/ps.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.split.left:hover {
+  content: "";
+  /* position: absolute; */
+  width: 100%;
+  height: 100%;
+  transition: all var(--speed) ease-in-out;
+  background-color: red;
+}
+.split.right:hover {
+  content: "";
+  /* position: absolute; */
+  width: 100%;
+  height: 100%;
+  transition: all var(--speed) ease-in-out;
+  background-color: red;
+}
+.split.left::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+.split.right {
+  right: 0;
+  background-image: url("https://github.com/bradtraversy/50projects50days/blob/master/split-landing-page/xbox.jpg?raw=true");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.right::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
+}
+.btn1 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  color: #fff;
+  border: #fff solid 0.2rem;
+  width: 15rem;
+  font-weight: bold;
+  padding: 1.5rem;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: 4rem;
+  color: #fff;
+  left: 50%;
+}
+split.right,
+.split.left,
+.split.right::before,
+.split.left::before {
+  transition: all var(--speed) ease-in-out;
+}
+.hover-left .left {
+  width: var(--hover-width);
+}
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-right .right {
+  width: var(--hover-width);
+}
+.hover-right .left {
+  width: var(--other-width);
+}
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+    top: 30%;
+  }
+  .btn {
+    padding: 1, 2rem;
+    width: 12rem;
+  }
+}
